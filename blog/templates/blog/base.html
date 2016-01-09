@@ -5,7 +5,9 @@
         </head>
         <body>
         <div class="page-header">
-            <a href = "{% url 'post_new' %}"<span></span></a>
+            {% if user.is_authenticated %}
+                <a href = "{% url 'post_new' %}">new</a><br>
+            {% endif %}
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
         <div class="content container">
